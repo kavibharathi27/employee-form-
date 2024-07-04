@@ -1,0 +1,208 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #0100005c;
+}
+
+.container {
+    display: flex;
+    width: 80%;
+    height: 80%;
+    position: relative; 
+}
+
+.input-line {
+    background-color: #ccc;
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    width: 50%;
+    height: 2px;
+    z-index: -1; 
+}
+
+.sections {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 25%;
+    background-color: #05687c;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    padding: 20px 0; 
+}
+
+.sections h1 {
+    text-align: center;
+    padding: 10px 0; 
+}
+
+.vertical {
+    border-left: 5px solid black;
+    height: 200px;
+}
+
+#personalForm {
+    background-color: #078809;
+}
+
+#professionalForm {
+    background-color: #430db0;
+}
+
+#bankForm {
+    background-color: #c76516;
+}
+
+.forms {
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; 
+}
+
+.form {
+    display: none;
+    width: 80%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #06000022;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-height: 100%;
+    overflow-y: auto; 
+}
+
+.form.active {
+    display: block;
+}
+
+.form h2 {
+    padding-top: 0;
+    padding-bottom: 20px;
+}
+
+.form-group {
+    padding-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="email"],
+input[type="tel"],
+select {
+    width: 100%;
+    padding: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[required] {
+    border-color: #07ed67;
+}
+
+button[type="submit"],
+button[type="button"] {
+    width: 120px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: #020204f1;
+    color: #f6f5f5;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 10px;
+}
+
+button[type="submit"]:hover,
+button[type="button"]:hover {
+    background-color: #0d0d0d;
+}
+
+.show-form {
+    width: 180px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: #050461f1;
+    color: #f8f6f6;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.show-form:hover {
+    background-color: #0d0d0d;
+}
+
+.show-form.personal {
+    background-color: #078809;
+}
+
+.show-form.professional {
+    background-color: #430db0;
+}
+
+.show-form.bank {
+    background-color: #c76516;
+}
+
+.guardian-info {
+    display: none;
+}
+
+.guardian-or-parent {
+    display: flex;
+    align-items: center;
+    padding: 10px 0; 
+}
+
+.guardian-or-parent input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 2px solid black;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    margin-right: 10px;
+    position: relative;
+}
+
+.guardian-or-parent input[type="radio"]:checked::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#guardian {
+    padding-right: 3px; 
+}

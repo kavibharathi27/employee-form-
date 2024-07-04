@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Details</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sections">
+            <h1>EMPLOYEE DETAILS</h1>
+            <div class="section personal-section">
+                <button class="show-form personal" data-target="personal">Personal Information</button>
+            </div>
+            <div class="input-line"></div>
+            <div class="section professional-section">
+                <button class="show-form professional" data-target="professional">Professional Information</button>
+            </div>
+            <div class="section bank-section">
+                <button class="show-form bank" data-target="bank">Bank Information</button>
+            </div>
+        </div>
+        <div class="forms">
+            <div id="personalForm" class="form active">
+                <h2>Personal Information Form</h2>
+                <form id="personalFormContent">
+                    <div class="form-group">
+                        <label for="employeeName">Employee Name</label>
+                        <input type="text" id="employeeName" name="employeeName" required pattern="[A-Za-z\s]+">
+                    </div>
+                    <div class="form-group">
+                        <label for="dob">Date Of Birth</label>
+                        <input type="date" id="dob" name="dob" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="gender">Gender</label>
+                        <select id="gender" name="gender" required>
+                            <option value="">Select Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Transgender</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="personalPhone">Personal Phone Number</label>
+                        <input type="tel" id="personalPhone" name="personalPhone" required pattern="[0-9]{10}">
+                    </div>
+                    <div class="form-group">
+                        <label for="alternatePhone">Alternate Phone Number</label>
+                        <input type="tel" id="alternatePhone" name="alternatePhone" pattern="[0-9]{10}">
+                    </div>
+                    <div class="form-group">
+                        <label for="personalEmail">Personal Email ID</label>
+                        <input type="email" id="personalEmail" name="personalEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="alternateEmail">Alternate Email ID</label>
+                        <input type="email" id="alternateEmail" name="alternateEmail">
+                    </div>
+                    <div class="form-group">
+                        <label>Guardian or Parent</label>
+                        <div class="guardian-or-parent">
+                            <label for="parent">
+                                <input type="radio" id="parent" name="guardianOrParent" value="parent" checked>
+                                Parent
+                            </label>
+                            <label for="guardian">
+                                <input type="radio" id="guardian" name="guardianOrParent" value="guardian">
+                                Guardian
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group guardian-info" style="display: none;">
+                        <label for="guardianName">Guardian's Name</label>
+                        <input type="text" id="guardianName" name="guardianName">
+                    </div>
+                    <div class="form-group guardian-info" style="display: none;">
+                        <label for="relationship">Relationship with Guardian</label>
+                        <input type="text" id="relationship" name="relationship">
+                    </div>
+                    <button type="button" class="next-btn" data-target="professional">Next</button>
+                </form>
+            </div>
+            <div id="professionalForm" class="form">
+                <h2>Professional Information Form</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="designation">Designation</label>
+                        <input type="text" id="designation" name="designation" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reportingTo">Reporting To</label>
+                        <input type="text" id="reportingTo" name="reportingTo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="panNumber">PAN Number</label>
+                        <input type="text" id="panNumber" name="panNumber" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="passportPhoto">Passport-size Photo</label>
+                        <input type="file" id="passportPhoto" name="passportPhoto" accept="image/*">
+                    </div>
+                    <div class="form-group">
+                        <label for="aadharCard">Aadhar Card Image</label>
+                        <input type="file" id="aadharCard" name="aadharCard" accept="image/*">
+                    </div>
+                    <div class="form-group">
+                        <label for="panCard">PAN Card Image</label>
+                        <input type="file" id="panCard" name="panCard" accept="image/*">
+                    </div>
+                    <button type="button" class="prev-btn" data-target="personal">Previous</button>
+                    <button type="button" class="next-btn" data-target="bank">Next</button>
+                </form>
+            </div>
+            <div id="bankForm" class="form">
+                <h2>Bank Information Form</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="bankAccountNumber">Bank Account Number</label>
+                        <input type="text" id="bankAccountNumber" name="bankAccountNumber" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="bankName">Bank Name</label>
+                        <input type="text" id="bankName" name="bankName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="bankIFSCCode">Bank IFSC Code</label>
+                        <input type="text" id="bankIFSCCode" name="bankIFSCCode" required>
+                    </div>
+                    <button type="button" class="prev-btn" data-target="professional">Previous</button>
+                    <button type="button" class="next-btn" data-target="acknowledgment">Next</button>
+                </form>
+            </div>
+            <div id="acknowledgmentForm" class="form">
+                <h2>Acknowledgment</h2>
+                <form>
+                    <div class="form-group">
+                        <label><input type="checkbox" required> I confirm all information is correct</label>
+                    </div>
+                    <button type="submit" id="submitBtn" disabled>Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
